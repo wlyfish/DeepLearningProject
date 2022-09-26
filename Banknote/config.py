@@ -8,14 +8,13 @@
 # banknote classification config
 
 # 超参配置
-# yaml
 
 
 class Hyperparameter:
     # ################################################################
     #                             Data
     # ################################################################
-    device = 'cpu'  # cuda
+    device = 'cuda'  # cuda
     data_dir = './data/'
     data_path = './data/data_banknote_authentication.txt'
     trainset_path = './data/train.txt'
@@ -33,11 +32,11 @@ class Hyperparameter:
     # ################################################################
     #                             Experiment
     # ################################################################
-    batch_size = 64
-    init_lr = 1e-3
-    epochs = 100
-    verbose_step = 10
-    save_step = 200
+    batch_size = 64     # 一次取64条数据进行运算
+    init_lr = 1e-3  # 初始学习率
+    epochs = 100    # 训练100轮
+    verbose_step = 10  # 日志打印间隔
+    save_step = 200  # 模型保存间隔
 
 
 HP = Hyperparameter()
