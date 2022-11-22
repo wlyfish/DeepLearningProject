@@ -30,19 +30,21 @@ conv2d_nn = nn.Conv2d(
     padding=(KERNEL_SIZE//2, KERNEL_SIZE//2)
 )
 
+# max pooling 主要关注纹理特征的数据上
 # pooling_layer = nn.MaxPool2d(kernel_size=(2, 2), stride=2)
 # x_conv2d_out = conv2d_nn(x)
 # print('conv2d: ', x_conv2d_out.size())
-#
 # pool_out = pooling_layer(x_conv2d_out)
 # print('pooling: ', pool_out.size())
 
+# average pooling: 主要可以平滑图片（特征）
 # pooling_layer = nn.AvgPool2d(kernel_size=(2, 2), stride=2)
 # x_conv2d_out = conv2d_nn(x)
 # print('conv2d: ', x_conv2d_out.size())
 # pool_out = pooling_layer(x_conv2d_out)
 # print('pooling: ', pool_out.size())
 
+# adaptive pooling:手动定制size
 pooling_layer = nn.AdaptiveAvgPool2d(output_size=(45, 45))
 x_conv2d_out = conv2d_nn(x)
 print('conv2d: ', x_conv2d_out.size())
